@@ -25,6 +25,7 @@ export class AccountComponent implements OnInit {
 
   onSetTo(status: string) {
     this.accountsService.changeStatus(this.id, status)
-    this.loggingService.logStatusChange(status)
+    // this.loggingService.logStatusChange(status)
+    this.accountsService.statusUpdated.emit(status)
   }
 }
